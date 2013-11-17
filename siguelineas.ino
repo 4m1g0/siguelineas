@@ -8,7 +8,7 @@ Servo Rservo;
 Servo Lservo;
 const int R0 = 78; // 2
 const int L0 = 81; // 1
-int Rspeed = 10;
+int Rspeed = -10;
 int Lspeed = 10;
  
 int right = 0;    // variable to store the servo position 
@@ -28,7 +28,7 @@ void setup()
   Lservo.write(L0);
   
   // obtenemos un patrón de luminosidad del fondo
-  int repeticiones = 50;
+  int repeticiones = 10;
   for (int i = 0; i< repeticiones; i++) 
   {
       origenRight += analogRead(A0);
@@ -41,7 +41,7 @@ void setup()
         Rservo.write(R0+(Lspeed/2));
         Lservo.write(L0);
       }
-      delay(20);
+      delay(200);
   }
   Rservo.write(R0);
   Lservo.write(L0);
